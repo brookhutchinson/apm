@@ -9,13 +9,12 @@ import { AppComponent }     from './app.component';
 @NgModule({
   // modules
   imports: [
+    // angular modules
     AppRoutingModule,
     BrowserModule
   ],
   // components
-  declarations: [
-    AppComponent
-  ],
+  declarations: [ AppComponent ],
   // services
   providers: [],
   // bootstrap
