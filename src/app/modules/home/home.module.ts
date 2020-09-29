@@ -3,7 +3,10 @@ import { NgModule }     from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // shared modules
-import { SharedModule } from './../shared/shared.module';
+import { SharedModule }     from './../shared/shared.module';
+
+// components
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 @NgModule({
   // modules
@@ -14,6 +17,6 @@ import { SharedModule } from './../shared/shared.module';
     SharedModule
   ],
   // components
-  declarations: []
+  declarations: [ WelcomeComponent ]
 })
 export class HomeModule {}
