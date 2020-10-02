@@ -17,6 +17,15 @@ import { ProductListComponent } from './components/product-list/product-list.com
     SharedModule
   ],
   // components
-  declarations: [ ProductListComponent ]
+  declarations: [ ProductListComponent ],
+  // exports
+  exports: [
+    // angular module
+    CommonModule,
+    // shared module
+    SharedModule,
+    // components
+    ProductListComponent
+  ]
 })
 export class ProductModule {}
