@@ -12,6 +12,9 @@ import { Product }           from './../../../../interfaces/product';
 export class ProductListComponent implements OnInit {
   constructor() {}
 
+  imageWidth: number = 50;
+  imageMargin: number = 2;
+
   pageTitle: string = 'Product List';
 
   products: Product[] = [

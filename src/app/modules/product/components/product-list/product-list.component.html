@@ -17,8 +17,6 @@
     </div><!-- /.container -->
 
     <div class="table-responsive">
-
-      <!-- if the products propety has a value and the products array has a length of 1 or more then display table -->
       <table class="table mb-0" *ngIf="products && products.length">
         <thead>
           <tr>
@@ -33,7 +31,7 @@
 
         <tbody>
           <tr *ngFor="let product of products">
-            <td></td>
+            <td><img [src]="product.imageUrl" [style.margin.px]="imageMargin" [style.width.px]="imageWidth" [title]="product.productName"></td>
             <td>{{ product.productName }}</td>
             <td>{{ product.productCode }}</td>
             <td>{{ product.releaseDate }}</td>
