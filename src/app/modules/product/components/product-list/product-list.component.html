@@ -17,9 +17,12 @@
     </div><!-- /.container -->
 
     <div class="table-responsive">
-      <table class="table mb-0">
+
+      <!-- if the products propety has a value and the products array has a length of 1 or more then display table -->
+      <table class="table mb-0" *ngIf="products && products.length">
         <thead>
           <tr>
+            <th></th>
             <th>Product</th>
             <th>Code</th>
             <th>Category</th>
@@ -29,7 +32,14 @@
         </thead>
 
         <tbody>
-
+          <tr *ngFor="let product of products">
+            <td></td>
+            <td>{{ product.productName }}</td>
+            <td>{{ product.productCode }}</td>
+            <td>{{ product.releaseDate }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.starRating }}</td>
+          </tr>
         </tbody>
       </table>
     </div><!-- /.table-responsive -->
