@@ -10,13 +10,33 @@ import { Product }           from './../../../../interfaces/product';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  constructor() {}
+  constructor() {
+    // set default values
+    this.filteredProducts = this.products;
+    this.listFilter = 'cart';
+  }
 
   imageWidth: number = 50;
   imageMargin: number = 2;
-  listFilter: string = 'cart';
   pageTitle: string = 'Product List';
+  showImage: boolean = false;
 
+  private _listFilter: string;
+  get listFilter(): string {
+    return this._listFilter;
+  }
+  set listFilter(value: string) {
+    this._listFilter = value;
+
+    // if there is a value for listFilter then apply filter and display filtered products
+    // if there is no value for listFilter then display all proudcts
+    this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
+  }
+
+  // filtered products
+  filteredProducts: Product[];
+
+  // original products
   products: Product[] = [
     {
       "productId": 1,
@@ -70,9 +90,18 @@ export class ProductListComponent implements OnInit {
     }
   ];
 
-  showImage: boolean = false;
-
   ngOnInit() {}
+
+  performFilter(filterText: string): Product[] {
+    // convert to lowercase
+    filterText = filterText.toLocaleLowerCase();
+
+    // goal: create create array of filtered products
+    // 1) for each product in the products array check whether the filterText exists inside the productName
+    // 2) if filterText exists inside productName then add product to products array
+    // 3) return array of filtered products
+    return this.products.filter((product: Product) => product.productName.toLocaleLowerCase().indexOf(filterText) !== -1);
+  }
 
   toggleImage() {
     this.showImage = !this.showImage;
