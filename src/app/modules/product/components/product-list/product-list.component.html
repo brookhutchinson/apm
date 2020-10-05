@@ -4,17 +4,15 @@
   </div><!-- /card-header -->
 
   <div class="card-body">
-    <div class="container">
-      <div class="row justify-content-between">
-        <div class="col-3">
+    <div class="row">
+      <div class="col-md-2">
+        Filter By:
+      </div><!-- /.col-md-2 -->
 
-        </div><!-- /.col-3 -->
-
-        <div class="col-2">
-
-        </div><!-- /.col-2 -->
-      </div><!-- /.row -->
-    </div><!-- /.container -->
+      <div class="col-md-4">
+        <input type="text" [(ngModel)]="listFilter">
+      </div><!-- /.col-md-4 -->
+    </div><!-- /.row -->
 
     <div class="table-responsive">
       <table class="table mb-0" *ngIf="products && products.length">
@@ -41,6 +39,5 @@
         </tbody>
       </table>
     </div><!-- /.table-responsive -->
-
   </div><!-- /.card-body -->
 </div><!-- /.card -->

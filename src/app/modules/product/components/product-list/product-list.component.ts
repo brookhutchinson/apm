@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit {
 
   imageWidth: number = 50;
   imageMargin: number = 2;
-
+  listFilter: string = 'cart';
   pageTitle: string = 'Product List';
 
   products: Product[] = [
