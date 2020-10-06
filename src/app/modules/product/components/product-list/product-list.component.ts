@@ -13,11 +13,7 @@ import { Product }           from './../../../../interfaces/product';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  constructor(private productService: ProductService) {
-    // set default values
-    this.filteredProducts = this.products;
-    this.listFilter = 'cart';
-  }
+  constructor(private productService: ProductService) {}
 
   imageMargin: number = 2;
   imageWidth: number = 50;
@@ -42,7 +38,13 @@ export class ProductListComponent implements OnInit {
   // original products
   products: Product[];
 
-  ngOnInit() {}
+  ngOnInit() {
+    // retrieve products
+    this.products = this.productService.getProducts();
+
+    // set filtered products to products
+    this.filteredProducts = this.products;
+  }
 
   onRatingClicked(message: string) {
     // set page title value to include message passed from StarComponent event
