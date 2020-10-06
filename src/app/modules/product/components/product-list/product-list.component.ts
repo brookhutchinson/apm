@@ -1,6 +1,9 @@
 // components
 import { Component, OnInit } from '@angular/core';
 
+// services
+import { ProductService }    from './../../../../services/product.service';
+
 // interfaces
 import { Product }           from './../../../../interfaces/product';
 
@@ -10,14 +13,14 @@ import { Product }           from './../../../../interfaces/product';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  constructor() {
+  constructor(private productService: ProductService) {
     // set default values
     this.filteredProducts = this.products;
     this.listFilter = 'cart';
   }
 
-  imageWidth: number = 50;
   imageMargin: number = 2;
+  imageWidth: number = 50;
   pageTitle: string = 'Product List';
   showImage: boolean = false;
 
