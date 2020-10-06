@@ -92,6 +92,11 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {}
 
+  onRatingClicked(message: string) {
+    // set page title value to include message passed from StarComponent event
+    this.pageTitle = 'Product List: ' + message;
+  }
+
   performFilter(filterText: string): Product[] {
     // convert to lowercase
     filterText = filterText.toLocaleLowerCase();
