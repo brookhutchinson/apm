@@ -1,5 +1,5 @@
 // components
-import { Component, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'star',
@@ -7,7 +7,8 @@ import { Component, OnChanges } from '@angular/core';
   styleUrls: ['./star.component.scss']
 })
 export class StarComponent implements OnChanges {
-  rating: number = 4;
+  @Input() rating: number;
+
   starWidth: number;
 
   constructor() {}
