@@ -1,7 +1,9 @@
 // modules
-import { BrowserModule }    from '@angular/platform-browser';
 import { NgModule }         from '@angular/core';
+import { BrowserModule }    from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule }     from '@angular/router';
 
 // feature modules
 import { HomeModule }       from './modules/home/home.module';
@@ -14,7 +16,7 @@ import { AppComponent }     from './app.component';
   // modules
   imports: [
     // angular modules
-    AppRoutingModule, BrowserModule,
+    AppRoutingModule, BrowserModule, HttpClientModule, RouterModule,
     // feature modules
     HomeModule, ProductModule
   ],
