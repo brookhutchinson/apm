@@ -38,12 +38,22 @@ export class ProductListComponent implements OnInit {
   // original products
   products: Product[];
 
+  errorMessage: string;
+
   ngOnInit() {
     // retrieve products
-    this.products = this.productService.getProducts();
+    this.productService.getProducts().subscribe(
+      // on success
+      (products) => {
+        this.products = products;
+        this.filteredProducts = this.products;
+      }
+    ),
+    // on error
+    (err) => {
+      this.errorMessage = err;
+    };
 
-    // set filtered products to products
-    this.filteredProducts = this.products;
   }
 
   onRatingClicked(message: string) {
