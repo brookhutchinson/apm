@@ -53,7 +53,6 @@ export class ProductListComponent implements OnInit {
     (err) => {
       this.errorMessage = err;
     };
-
   }
 
   onRatingClicked(message: string) {
