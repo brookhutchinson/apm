@@ -47,12 +47,12 @@ export class ProductListComponent implements OnInit {
       (products) => {
         this.products = products;
         this.filteredProducts = this.products;
+      },
+      // on error
+      (err) => {
+        this.errorMessage = err;
       }
-    ),
-    // on error
-    (err) => {
-      this.errorMessage = err;
-    };
+    )
   }
 
   onRatingClicked(message: string) {
