@@ -1,12 +1,13 @@
 // modules
-import { NgModule }             from '@angular/core';
-import { CommonModule }         from '@angular/common';
+import { NgModule }               from '@angular/core';
+import { CommonModule }           from '@angular/common';
 
 // shared modules
-import { SharedModule }         from './../shared/shared.module';
+import { SharedModule }           from './../shared/shared.module';
 
 // components
-import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ProductListComponent }   from './components/product-list/product-list.component';
 
 @NgModule({
   // modules
@@ -17,7 +18,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
     SharedModule
   ],
   // components
-  declarations: [ ProductListComponent ],
+  declarations: [ ProductDetailComponent, ProductListComponent ],
   // exports
   exports: [
     // angular module
@@ -25,6 +26,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
     // shared module
     SharedModule,
     // components
+    ProductDetailComponent,
     ProductListComponent
   ]
 })
