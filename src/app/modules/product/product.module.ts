@@ -18,7 +18,10 @@ import { ProductListComponent }   from './components/product-list/product-list.c
     SharedModule
   ],
   // components
-  declarations: [ ProductDetailComponent, ProductListComponent ],
+  declarations: [
+    ProductDetailComponent,
+    ProductListComponent
+  ],
   // exports
   exports: [
     // angular module

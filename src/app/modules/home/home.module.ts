@@ -1,6 +1,6 @@
 // modules
-import { NgModule }     from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule }         from '@angular/core';
+import { CommonModule }     from '@angular/common';
 
 // shared modules
 import { SharedModule }     from './../shared/shared.module';
@@ -17,6 +17,17 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     SharedModule
   ],
   // components
-  declarations: [ WelcomeComponent ]
+  declarations: [
+    WelcomeComponent
+  ],
+  // exports
+  exports: [
+    // angular module
+    CommonModule,
+    // shared module
+    SharedModule,
+    // components
+    WelcomeComponent
+  ]
 })
 export class HomeModule {}
