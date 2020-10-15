@@ -1,6 +1,7 @@
 // modules
 import { NgModule }               from '@angular/core';
 import { CommonModule }           from '@angular/common';
+import { RouterModule }           from '@angular/router';
 
 // shared modules
 import { SharedModule }           from './../shared/shared.module';
@@ -13,7 +14,7 @@ import { ProductListComponent }   from './components/product-list/product-list.c
   // modules
   imports: [
     // angular module
-    CommonModule,
+    CommonModule, RouterModule,
     // shared module
     SharedModule
   ],
