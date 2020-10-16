@@ -17,7 +17,7 @@ import { tap }               from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductService {
-  productUrl: string = 'assets/api/products/products.json';
+  private productUrl: string = 'assets/api/products/products.json';
 
   constructor(private http: HttpClient) {}
 
@@ -28,6 +28,13 @@ export class ProductService {
         tap((products) => console.table(products)),
         // catch error
         catchError(this.handleError)
+      );
+  }
+
+  getProduct(id: number): Observable<Product> {
+    return this.getProducts()
+      .pipe(
+        map((products: Product[]) => products.find(p => p.productId === id))
       );
   }
 
@@ -42,7 +49,7 @@ export class ProductService {
       errorMessage = `Server-Side Error occurred: Http Response Code ${err.status}, error message: ${err.message}`;
     }
 
-    // log error to console
+    // log to console
     console.error(errorMessage);
 
     // throw error
