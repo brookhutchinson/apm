@@ -13,32 +13,33 @@ import { Product }           from './../../../../interfaces/product';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-  constructor(private productService: ProductService) {}
-
-  imageMargin: number = 2;
   imageWidth: number = 50;
+  imageMargin: number = 2;
   pageTitle: string = 'Product List';
   showImage: boolean = false;
 
-  private _listFilter: string;
+  _listFilter: string;
   get listFilter(): string {
     return this._listFilter;
   }
   set listFilter(value: string) {
+    // change value
     this._listFilter = value;
 
     // if there is a value for listFilter then apply filter and display filtered products
-    // if there is no value for listFilter then display all proudcts
+    // if there is no value for listFilter then display all products
     this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
   }
 
   // filtered products
   filteredProducts: Product[];
 
-  // original products
-  products: Product[];
+  // non-filtered products
+  products: Product[] = [];
 
   errorMessage: string;
+
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
     // retrieve products
@@ -46,13 +47,13 @@ export class ProductListComponent implements OnInit {
       // on success
       (products) => {
         this.products = products;
+
+        // initialize filtered list of products to full list of products
         this.filteredProducts = this.products;
       },
       // on error
-      (err) => {
-        this.errorMessage = err;
-      }
-    )
+      (err) => this.errorMessage = err
+    );
   }
 
   onRatingClicked(message: string) {
