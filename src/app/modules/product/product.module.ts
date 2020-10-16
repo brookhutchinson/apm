@@ -1,7 +1,9 @@
 // modules
 import { NgModule }               from '@angular/core';
-import { CommonModule }           from '@angular/common';
 import { RouterModule }           from '@angular/router';
+
+// feature routing module
+import { ProductRoutingModule }   from './product-routing.module';
 
 // shared modules
 import { SharedModule }           from './../shared/shared.module';
@@ -14,8 +16,10 @@ import { ProductListComponent }   from './components/product-list/product-list.c
   // modules
   imports: [
     // angular module
-    CommonModule, RouterModule,
-    // shared module
+    RouterModule,
+    // feature routing module
+    ProductRoutingModule,
+    // shared modules
     SharedModule
   ],
   // components
@@ -25,10 +29,6 @@ import { ProductListComponent }   from './components/product-list/product-list.c
   ],
   // exports
   exports: [
-    // angular module
-    CommonModule,
-    // shared module
-    SharedModule,
     // components
     ProductDetailComponent,
     ProductListComponent

@@ -5,19 +5,10 @@ import { RouterModule }           from '@angular/router';
 import { Routes }                 from '@angular/router';
 
 // components
-import { ProductDetailComponent } from './modules/product/components/product-detail/product-detail.component';
-import { ProductListComponent }   from './modules/product/components/product-list/product-list.component';
 import { WelcomeComponent }       from './modules/home/components/welcome/welcome.component';
-
-// guards
-import { ProductDetailGuard }     from './modules/product/guards/product-detail.guard';
 
 // define routes
 const routes: Routes = [
-  // product list route
-  { path: 'products', component: ProductListComponent },
-  // product detail route
-  { path: 'products/:id', canActivate: [ProductDetailGuard], component: ProductDetailComponent },
   // welcome route
   { path: 'welcome', component: WelcomeComponent },
   // default route

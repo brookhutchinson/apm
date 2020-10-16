@@ -1,10 +1,10 @@
 // modules
-import { NgModule }     from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule }  from '@angular/forms';
+import { NgModule }            from '@angular/core';
+import { CommonModule }        from '@angular/common';
+import { FormsModule }         from '@angular/forms';
 
 // start component
-import { StarComponent } from './components/star/star.component';
+import { StarComponent }       from './components/star/star.component';
 
 // pipes
 import { ConvertToSpacesPipe } from './pipes/convert-to-spaces.pipe';
